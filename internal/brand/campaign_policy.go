@@ -69,3 +69,9 @@ func MergeFeaturedSKUs(existing, incoming []string) []string {
 	}
 	return merged
 }
+
+func subsidyEvidenceSnapshot(claim SubsidyClaim) SubsidyClaim {
+	clone := claim
+	clone.EvidenceHashes = nil
+	return clone
+}
