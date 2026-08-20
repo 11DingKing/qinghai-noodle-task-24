@@ -88,8 +88,6 @@ func (s *Service) CheckDestinationCoverage(_ context.Context, campaign CultureCa
 }
 
 func (s *Service) CheckSubsidyClaim(_ context.Context, claim SubsidyClaim, store StoreProfile, license BrandLicense) error {
-	claim = subsidyEvidenceSnapshot(claim)
-
 	return ValidateSubsidyClaim(claim, store, license, s.now())
 }
 
